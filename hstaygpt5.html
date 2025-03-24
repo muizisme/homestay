@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full House Ville Homestay Rawang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            background: url('17.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+        .slider {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: flex;
+            width: 2000%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 800px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .map {
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        Welcome to Full House Ville Homestay Rawang
+    </div>
+    <div class="container">
+        <div class="content">
+            <h2>Your Home Away from Home</h2>
+            <p>Located in **Bukit Sentosa, Rawang**, our spacious double-story homestay offers comfort and convenience for families, business travelers, and vacationers.</p>
+            <ul>
+                <li><strong>3 Bedrooms, 3 Toilets</strong> – Perfect for families or groups.</li>
+                <li><strong>Parking for 4 Cars</strong> – 2 inside, 2 outside.</li>
+                <li><strong>Fully Furnished</strong> – Equipped with essential home appliances.</li>
+                <li><strong>Strategic Location</strong> – Close to shops, highways, and attractions.</li>
+            </ul>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <img src="1.jpg" alt="Photo 1">
+                <img src="2.jpg" alt="Photo 2">
+                <img src="3.jpg" alt="Photo 3">
+                <img src="14.jpg" alt="Photo 4">
+                <img src="5.jpg" alt="Photo 5">
+                <img src="6.jpg" alt="Photo 5">
+                <img src="7.jpg" alt="Photo 5">
+                <img src="9.jpg" alt="Photo 5">
+                <img src="10.jpg" alt="Photo 5">
+                <img src="11.jpg" alt="Photo 5">
+                <img src="12.jpg" alt="Photo 5">
+                <img src="13.jpg" alt="Photo 5">
+                <img src="24.jpg" alt="Photo 5">
+                <img src="15.jpg" alt="Photo 5">
+                <img src="16.jpg" alt="Photo 5">
+                <img src="17.jpg" alt="Photo 5">
+                <img src="18.jpg" alt="Photo 5">
+                <img src="19.jpg" alt="Photo 5">
+                <img src="20.jpg" alt="Photo 5">
+                <img src="21.jpg" alt="Photo 5">
+                <img src="22.jpg" alt="Photo 5">
+                <img src="23.jpg" alt="Photo 5">
+                <img src="25.jpg" alt="Photo 5">
+                <img src="26.jpg" alt="Photo 5">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="map">
+            <h3>Find Us Here</h3>
+            <iframe 
+                src="https://www.google.com/maps/place/Fullhouse+Ville+Homestay+Rawang/@3.4126225,101.5895499,697m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31cc69a1879225b9:0xcfb6f6b7816c236f!8m2!3d3.4126225!4d101.5895499!16s%2Fg%2F11k42qxpgj?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            index += step;
+            if (index < 0) index = 4;
+            if (index > 4) index = 0;
+            slides.style.transform = `translateX(${-index * 800}px)`;
+        }
+        
+        function autoPlay() {
+            moveSlide(1);
+            setTimeout(autoPlay, 3000);
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(autoPlay, 3000);
+        });
+    </script>
+</body>
+</html>
